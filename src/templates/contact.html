@@ -1,0 +1,256 @@
+---
+title: Контакты - Омельченко Сергей
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+		
+<!-- begin wrapper barba -->
+<div id="barba-wrapper">
+  <div class="barba-container">  
+	<!-- begin page -->
+	 <div id="page" class="middle-w">
+	 	<div class="wrapper-40 wrapper-100">
+		 	<h3 class="letter common">Контакты</h3>
+		 	<p class="word-split">
+        Если вы имеете вопросы, пожалуйста воспользуйтесь формой ниже.
+		 	</p>
+		 	<div class="cnt-form">
+		 		<form id="form" name="form">
+		 			<div class="in-50 wrapper-100"><input type="name" name="name" placeholder="Имя"><div class="b_line"></div></div>
+		 			<div class="in-50 wrapper-100"><input type="email" name="email" placeholder="Ел.почта"><div class="b_line"></div></div>
+		 			<div class="in-subj"><input type="text" name="subject" placeholder="Тема"><div class="b_line"></div></div>
+		 			<div class="in-txt"><textarea name="text" id=""  placeholder="Сообщение" cols="30" rows="10"></textarea><div class="b_line"></div></div>
+		 			<input type="submit" value="Отправить" id="btn-send">
+		 		</form>
+		 	</div>
+		</div> 	
+		<div class="wrapper-60 wrapper-100">
+			<div class="inf-map">
+				<h4>Сергей Омельченко</h4>
+				<p>Украина, Киев</p>
+				<a href="">093 995 34 59</a>
+				<a href="">s.kava1997@gmail.com</a>
+			</div>
+			<div id="map"></div>
+		</div> 			
+	 </div>
+	 <!-- end page --> 
+   {% include 'layouts/_pageloader.html' %}
+  </div>
+</div>
+    <script>     
+      //map
+function initMap() {
+  var styles = [
+    {
+      'featureType': 'all',
+      'elementType': 'labels.text.fill',
+      'stylers': [
+        {
+          'color': '#ffffff'
+        }
+      ]
+    },
+    {
+      'featureType': 'all',
+      'elementType': 'labels.text.stroke',
+      'stylers': [
+        {
+          'visibility': 'off'
+        }
+      ]
+    },
+    {
+      'featureType': 'administrative',
+      'elementType': 'geometry',
+      'stylers': [
+        {
+          'visibility': 'on'
+        },
+        {
+          'color': '#012621'
+        },
+        {
+          'weight': 0.8
+        }
+      ]
+    },
+    {
+      'featureType': 'administrative.country',
+      'elementType': 'labels',
+      'stylers': [
+        {
+          'color': '#012621'
+        }
+      ]
+    },
+    {
+      'featureType': 'administrative.country',
+      'elementType': 'labels.text',
+      'stylers': [
+        {
+          'color': '#0c0000'
+        }
+      ]
+    },
+    {
+      'featureType': 'administrative.province',
+      'elementType': 'labels.text',
+      'stylers': [
+        {
+          'color': '#012621'
+        }
+      ]
+    },
+    {
+      'featureType': 'administrative.locality',
+      'elementType': 'labels.text',
+      'stylers': [
+        {
+          'color': '#012621'
+        }
+      ]
+    },
+    {
+      'featureType': 'administrative.neighborhood',
+      'elementType': 'labels.text',
+      'stylers': [
+        {
+          'color': '#012621'
+        }
+      ]
+    },
+    {
+      'featureType': 'landscape',
+      'elementType': 'geometry',
+      'stylers': [
+        {
+          'color': '#06c5a9'
+        }
+      ]
+    },
+    {
+      'featureType': 'poi',
+      'elementType': 'all',
+      'stylers': [
+        {
+          'color': '#06c5a9'
+        },
+        {
+          'lightness': -7
+        }
+      ]
+    },
+    {
+      'featureType': 'poi.park',
+      'elementType': 'all',
+      'stylers': [
+        {
+          'color': '#06c5a9'
+        }
+      ]
+    },
+    {
+      'featureType': 'road',
+      'elementType': 'geometry.stroke',
+      'stylers': [
+        {
+          'color': '#ffffff'
+        },
+        {
+          'weight': 0.3
+        },
+        {
+          'lightness': 10
+        }
+      ]
+    },
+    {
+      'featureType': 'road.highway',
+      'elementType': 'geometry',
+      'stylers': [
+        {
+          'color': '#047968'
+        },
+        {
+          'lightness': '-7'
+        }
+      ]
+    },
+    {
+      'featureType': 'road.arterial',
+      'elementType': 'geometry',
+      'stylers': [
+        {
+          'color': '#06c5a9'
+        },
+        {
+          'visibility': 'on'
+        },
+        {
+          'lightness': -15
+        }
+      ]
+    },
+    {
+      'featureType': 'road.local',
+      'elementType': 'geometry',
+      'stylers': [
+        {
+          'color': '#06c5a9'
+        },
+        {
+          'lightness': '7'
+        }
+      ]
+    },
+    {
+      'featureType': 'transit',
+      'elementType': 'geometry',
+      'stylers': [
+        {
+          'color': '#06c5a9'
+        },
+        {
+          'lightness': -34
+        }
+      ]
+    },
+    {
+      'featureType': 'water',
+      'elementType': 'geometry',
+      'stylers': [
+        {
+          'color': '#333739'
+        }
+      ]
+    }
+  ];
+  var mapOptions = {
+    center: new google.maps.LatLng(50.4473932,30.526286),
+    zoom:5,
+    disableDefaultUI: true,
+    styles: styles
+  };
+  var map = new google.maps.Map(document.getElementById('map'),
+    mapOptions);
+  map.setOptions({styles: styles});
+  var image = 'img/marker.png';
+  var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(50.4473932,30.526286),
+    animation: google.maps.Animation.DROP,
+    icon: image
+
+  });
+  marker.setMap(map);
+  google.maps.event.addListenerOnce(map, 'tilesloaded', function() {
+    document.querySelector('.inf-map').classList.add("animated", "fadeInUp");
+    document.getElementById('map').style.opacity = '1';
+  });
+}
+    </script>    
+<!-- end wrapper barba -->
+
+{% endblock %}
+

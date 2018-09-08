@@ -1,0 +1,376 @@
+$bg: #252627
+$active: #08fdd8
+$tshadow: #4d4d4e
+$font_cursive: 'La Belle Aurore' 
+$font_rus: 'fira-sans' 
+$font_monserat: 'monsserat'
+$font_messiri: 'messiri'
+*
+	font-family: $font_messiri 
+body
+	background: $bg
+	+css-lock(16, 50, 600, 1000)
+	line-height: 1.4
+#click-menu
+	display: none
+	position: absolute
+	right: 10px
+	top: 0px
+	line-height: 60px
+	background: transparent
+	outline: none
+	border: none
+	color: #fff 
+	svg
+		font-size: 24px
+.barba-container
+	transition: all 1s ease-in-out	
+#nav_bar
+	position: fixed
+	left: 0
+	top: 0
+	width: 70px
+	height: 100vh
+	background: #181818 	
+	z-index: 10
+	#logotype
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 61px
+		line-height: 61px 
+		background: #000 
+		a
+			display: block
+			width: 100%
+			height: 100%
+			line-height: 61px 
+			position: relative
+		h1
+			color: #fff
+			font: 30px $font_messiri 
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%,-50%)
+	nav#menu
+		position: absolute
+		left: 0
+		top: 50%
+		transform: translateY(-50%)
+		width: 100%
+		a
+			color: $tshadow
+			font-size: 16px
+			display: block
+			width: 100%
+			height: 51px
+			line-height: 51px
+			text-align: center
+			position: relative
+			overflow: hidden
+			font-family: $font_messiri
+			svg
+				transition: all .3s ease-out
+				opacity: 1
+				transform: translateX(0)
+			span
+				position: absolute
+				left: 0
+				top: 0
+				width: 100%
+				font-size: 14px
+				text-align: center
+				transition: all .3s ease-out
+				opacity: 0
+				transform: translateX(-100%)
+			&:hover
+				svg
+					transform: translateX(65px)
+				span
+					opacity: 1
+					transform: translateX(0)
+					color: $active
+		a.active-m
+			color: $active
+	ul#social		
+		position: absolute
+		left: 0
+		bottom: 0
+		width: 100%
+		a
+			display: block
+			width: 100%
+			padding: 7px 0
+			color: $tshadow
+			font-size: 14px
+			text-align: center
+			transition: all .3s ease-out
+			&:hover
+				color: $active			
+#page
+	position: fixed
+	left: 70px
+	top: 0
+	right: 0
+	bottom: 0
+	background: $bg		
+	z-index: 2
+	color: #fff
+	padding: 30px 60px
+	display: flex
+	flex-direction: row
+	-webkit-align-items: center
+	align-items: center
+	&:before
+		content: '   <body>'
+		position: absolute
+		left: 30px
+		top: 30px
+		color: $tshadow
+		font-size: 20px
+		font-family: $font_cursive 
+	&:after
+		content: '   </body> \A </html>'
+		white-space: pre
+		position: absolute
+		left: 30px
+		bottom: 30px
+		color: $tshadow
+		font-size: 20px	
+		font-family: $font_cursive  	
+	img
+		max-width: 100%
+		display: block
+	h3
+		position: relative
+		max-width: 400px
+		font-size: 40px
+		font-family: $font_messiri
+		span
+			transition: all .3s ease-out
+			display: inline-block
+			min-width: 10px
+			cursor: default
+			&:hover
+				color: $active
+		&:before
+			content: '<h1>'
+			position: absolute
+			left: 0px
+			top: -30px
+			color: $tshadow
+			font-size: 20px
+			font-family: $font_cursive  
+		&:after
+			content: '</h1>'
+			position: absolute
+			right: -30px
+			bottom: 15px
+			color: $tshadow
+			font-size: 20px	
+			font-family: $font_cursive  		
+	p
+		color: lighten($tshadow, 20%)
+		font-size: 16px
+		//margin-left: 10px 
+		font-family: $font_messiri
+	img.main-personal
+		position: relative
+		float: right
+		bottom: -30px
+	h3.common
+		position: absolute		
+		color: $active
+		&:after
+			right: auto
+			left: 0
+			bottom: -30px
+	.word-split 
+		margin: 121px 0 0 
+		color: lighten($tshadow, 50%)
+		span
+			display: inline-block
+			margin-right: 5px	
+	.cnt-form		
+		form
+			div
+				display: block
+				margin: 15px 0 0
+				position: relative
+				input,textarea
+					display: block
+					width: 100%
+					max-width: 100% 
+					padding: 15px 10px
+					outline: none
+					background: #37393b 
+					color: #8d8d8d
+					border: none
+				.b_line
+					position: absolute
+					bottom: 0
+					left: 0
+					width: 0px
+					height: 2px
+					background: $active 
+					transition: all .3s linear							
+			#btn-send
+				float: right
+				border: none
+				display: block
+				margin: 20px 0
+				outline: none
+				padding: 10px 25px 
+				background: transparent
+				font-size: 14px
+				letter-spacing: 2.4px
+				text-transform: uppercase 
+				transition: all .3s ease-out
+				font-weight: 100 							
+				border: 1px solid $active
+				color: $active
+				-webkit-border-radius: 8px 
+				border-radius: 8px  
+				font-family: $font_messiri					
+				&:hover
+					background: $active
+					color: $tshadow 
+			.w-100 .b_line
+				width: 100%
+			.in-50
+				display: inline-block
+				width: 49%	
+	#map
+		position: absolute
+		left: 30px
+		top: -30px
+		width: calc(100% + 30px)
+		height: calc(100% + 60px)
+	.inf-map 
+	    position: absolute
+	    background: #000000
+	    top: 50px
+	    right: 30%
+	    z-index: 999999
+	    width: 230px
+	    padding: 25px 20px
+	    color: #fff
+	    font-size: 17px
+	    font-weight: 300
+	    opacity: 0
+	    &:before
+	    	content: '<div>'
+	    	position: absolute
+	    	color: $tshadow
+	    	left: 5px
+	    	top: 0px
+	    	font-family: $font_cursive 
+	    &:after
+	    	content: '</div>'
+	    	position: absolute
+	    	color: $tshadow
+	    	left: 5px
+	    	bottom: 0px
+	    	font-family: $font_cursive 
+	    p
+	    	text-align: left
+	    	margin: 0
+	    a
+	    	color: #fff
+	    	margin: 10px 0
+	    	text-decoration: none
+	.drag-photo
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		display: flex
+		-webkit-flex-direction: column 
+		-ms-flex-direction: column 
+		flex-direction: column 
+		ul.gallery
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%,-50%)
+			height: 40%
+			li
+				height: 100%
+				display: none
+				img
+					height: 100%
+			li.active-gl
+				display: block
+		svg
+			margin: auto
+			width: 60%
+			cursor: pointer
+			circle
+				stroke: $tshadow !important	   
+	#tags-cloud
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		canvas
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%			 	
+	.swiper-container	
+		a.link-work
+			text-decoration: none
+			.title-work
+				color: #fff
+				text-align: center
+				font-size: 33px 
+			.description-work
+				text-align: center
+				color: lighten($tshadow, 50%)
+				font-size: 20px
+		.slide-controls1
+			background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%2308fdd8'%2F%3E%3C%2Fsvg%3E")
+		.slide-controls2
+			background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%2308fdd8'%2F%3E%3C%2Fsvg%3E")
+.wrapper-50		
+	width: 50%
+.wrapper-40		
+	width: 40%
+.wrapper-60
+	width: 60%
+	height: 100%
+	position: relative	
+#loader
+	position: fixed
+	left: 0
+	top: 0
+	right: 0
+	bottom: 0
+	background: $bg
+	z-index: 2
+	display: none
+	text-align: center
+	h3
+		text-align: center
+		margin: auto
+		color: #fff
+		font-size: 34px
+	.progressbar
+		position: absolute
+		left: calc( 50% - 20% )
+		top: 60%
+		width: 40%
+		height: 1px
+		background: #047765
+		.line
+			position: absolute
+			left: 0
+			top: 0
+			height: 1px
+			background: #08fdd8
+

@@ -1,0 +1,33 @@
+---
+title: Главная - Омельченко Сергей
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+<!-- begin wrapper barba -->
+<div id="barba-wrapper">
+  <div class="barba-container">  
+	<!-- begin page -->
+	 <div id="page" class="middle-w">
+	 	<div class="wrapper-50 wrapper-100">
+	 		<h3 class="letter">Привет,<br>я Сергей.<br>Веб-разработчик </h3>
+	 		<p>Front-end developer / WordPress</p>
+	 	</div>
+	 	<div class="wrapper-50 wrapper-100" style="height: 100%; position: relative;">
+			<!-- begin canvas  -->
+			<div class="canvas">
+				{% for i in range(1,203) %}
+				  <div class="tr p{{i}}"></div>
+				{% endfor %}
+			</div>
+			<!-- end canvas -->
+		</div>		 		
+	 </div>
+	 <!-- end page --> 
+	 {% include 'layouts/_pageloader.html' %}
+  </div>
+</div>
+<!-- end wrapper barba -->
+
+{% endblock %}
